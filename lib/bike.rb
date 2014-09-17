@@ -16,4 +16,10 @@ class Bike
 		@broken = false
 	end
 
+	def self.broken
+		bike = Bike.new
+		bike.break!
+		bike
+	end
+
 end

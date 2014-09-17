@@ -2,8 +2,8 @@ require 'bike_container'
 
 class ContainerHolder; include BikeContainer; end
 
-def fill_station(station)
-    station.capacity.times { station.dock (Bike.new) }
+def fill_holder(holder)
+    holder.capacity.times { holder.dock (Bike.new) }
 end
 
 describe BikeContainer do
@@ -16,6 +16,7 @@ describe BikeContainer do
     	holder.dock(bike)
     	expect(holder.bike_count).to eq (1)
     end
+
     it "should release a bike" do
       holder.dock(bike)
       holder.release(bike)
@@ -24,20 +25,27 @@ describe BikeContainer do
 
     it "should know when it's full" do
       expect(holder).not_to be_full
-      fill_station holder
+      fill_holder holder
     end
 
     it "should not accept a bike if it's full" do
-      fill_station holder
+      fill_holder holder
       expect(lambda { holder.dock(bike) }).to raise_error(RuntimeError)
     end
 
     it "should provide the list of available bikes" do
-    	working_bike, broken_bike = Bike.new, Bike.new
-    	broken_bike.break!
+    	working_bike, broken_bike = Bike.new, Bike.broken
+    	
     	holder.dock(working_bike)
     	holder.dock(broken_bike)
     	expect(holder.available_bikes).to eq ([working_bike])
+    end
+
+    it "should provide the list of broken bikes" do
+      broken_bike = Bike.new
+      broken_bike.break!
+      holder.dock(broken_bike)
+      expect(holder.broken_bikes).to eq ([broken_bike])
     end
     	
 end
