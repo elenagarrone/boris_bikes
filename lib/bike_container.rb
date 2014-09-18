@@ -20,11 +20,21 @@ module BikeContainer
 
     def dock(bike)
     	raise "Station is full" if full?
+        raise "Sorry, you didn't return a bike - try again" unless bike
     	bikes << bike
     end
 
     def release(bike)
+        raise "Sorry, no bikes are available - try again later." if available_bikes == 0
     	bikes.delete(bike)
+    end
+
+    def release_available_bikes
+        available_bikes.each {|bike| release bike}
+    end
+
+    def release_broken_bikes
+        broken_bikes.each {|bike| release bike}
     end
 
     def full?
@@ -36,10 +46,11 @@ module BikeContainer
     end
     
     def available_bikes
-    	bikes.reject { |bike| bike.broken? }
+    	bikes.reject &:broken? #bikes.reject { |bike| bike.broken? }
     end
 
     def broken_bikes
-        bikes.select { |bike| bike.broken? }
+        bikes.select &:broken? #bikes.select { |bike| bike.broken? }
     end
+
 end

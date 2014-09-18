@@ -19,7 +19,7 @@ describe BikeContainer do
 
     it "should release a bike" do
       holder.dock(bike)
-      holder.release(bike)
+      holder.release_available_bikes
       expect(holder.bike_count).to eq(0)
     end
 
@@ -35,15 +35,13 @@ describe BikeContainer do
 
     it "should provide the list of available bikes" do
     	working_bike, broken_bike = Bike.new, Bike.broken
-    	
     	holder.dock(working_bike)
     	holder.dock(broken_bike)
     	expect(holder.available_bikes).to eq ([working_bike])
     end
 
     it "should provide the list of broken bikes" do
-      broken_bike = Bike.new
-      broken_bike.break!
+      broken_bike = Bike.broken
       holder.dock(broken_bike)
       expect(holder.broken_bikes).to eq ([broken_bike])
     end
