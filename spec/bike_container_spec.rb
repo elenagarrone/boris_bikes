@@ -12,15 +12,14 @@ describe BikeContainer do
 	let(:holder) { ContainerHolder.new }
 
     it "should accept a bike" do
-    	expect(holder.bike_count).to eq (0)
-    	holder.dock(bike)
-    	expect(holder.bike_count).to eq (1)
+    	expect{holder.dock(bike)}.to change{holder.bike_count}.by 1
     end
 
     it "should release a bike" do
-      holder.dock(bike)
-      holder.release_available_bikes
-      expect(holder.bike_count).to eq(0)
+      # holder.dock(bike)
+      # holder.release_available_bikes
+      # expect(holder.bike_count).to eq(0)
+      expect(holder.release_available_bikes).to change{holder.bike_count}.by 0
     end
 
     it "should know when it's full" do
