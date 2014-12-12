@@ -1,7 +1,9 @@
+[![Code Climate](https://codeclimate.com/repos/548ac171e30ba03d1300593a/badges/a9c4e8e7eca7d767dcba/gpa.svg)](https://codeclimate.com/repos/548ac171e30ba03d1300593a/feed)
+
 Boris Bike
 ==========
 This project was created during the first week of Makers Academy.
-The goal was to create a simple system for managing Boris Bikes in London. 
+The goal was to create a simple system for managing Boris Bikes in London.
 The objective was to learn about object oriented programming, and to practising TDD with RSpec.
 
 Technologies:
