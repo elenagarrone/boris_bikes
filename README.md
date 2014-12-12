@@ -15,13 +15,22 @@ Technologies:
 How to use
 ---------
 
-Set it up:
+Clone the directory:
 ```shell
 $ git clone https://github.com/elenagarrone/boris_bikes.git
 ```
-Test it:
+Change into it:
 ```shell
 $ cd boris_bikes
+```
+Run irb and require the runner file:
+```shell
+$ irb
+> require './lib/runner.rb'
+```
+How to test it:
+--------------
+From inside the directory run:
+```shell
 $ rspec
 ```
-You can also play with it in irb.
