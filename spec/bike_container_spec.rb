@@ -7,7 +7,7 @@ def fill_holder(holder)
 end
 
 describe BikeContainer do
-	
+
 	let(:bike) { Bike.new }
 	let(:holder) { ContainerHolder.new }
 
@@ -16,10 +16,7 @@ describe BikeContainer do
     end
 
     it "should release a bike" do
-      # holder.dock(bike)
-      # holder.release_available_bikes
-      # expect(holder.bike_count).to eq(0)
-      expect(holder.release_available_bikes).to change{holder.bike_count}.by 0
+      expect{holder.release_available_bikes}.to change{holder.bike_count}.by 0
     end
 
     it "should know when it's full" do
@@ -44,5 +41,5 @@ describe BikeContainer do
       holder.dock(broken_bike)
       expect(holder.broken_bikes).to eq ([broken_bike])
     end
-    	
+
 end
