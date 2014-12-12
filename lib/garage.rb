@@ -9,12 +9,8 @@ class Garage
 	 	super
 	 end
 
-     def collect_from(van)
-     	van.broken_bikes.each do |broken_bike|
-     		dock(broken_bike)
-     		van.release broken_bike
-        end
-     end
+   def collect_from(van)
+   	van.broken_bikes.each { |broken_bike| dock(broken_bike); van.release broken_bike }
+   end
 
 end
-
