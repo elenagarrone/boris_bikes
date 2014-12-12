@@ -23,7 +23,6 @@ describe BikeContainer do
 
   it "should know when it's full" do
     expect(holder).not_to be_full
-    fill_holder holder
   end
 
   it "should not accept a bike if it's full" do
@@ -35,13 +34,13 @@ describe BikeContainer do
   	working_bike, broken_bike = Bike.new, Bike.broken
   	holder.dock(working_bike)
   	holder.dock(broken_bike)
-  	expect(holder.available_bikes).to eq ([working_bike])
+  	expect(holder.available_bikes).to eq([working_bike])
   end
 
   it "should provide the list of broken bikes" do
     broken_bike = Bike.broken
     holder.dock(broken_bike)
-    expect(holder.broken_bikes).to eq ([broken_bike])
+    expect(holder.broken_bikes).to eq([broken_bike])
   end
 
 end

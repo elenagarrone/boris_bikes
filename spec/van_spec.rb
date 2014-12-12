@@ -34,7 +34,7 @@ describe Van do
       expect(van.bikes).to eq [broken_bike]
       expect(station.bikes).to eq [bike]
    end
-   
+
    it "should pick up the fixed bikes from the garage" do
       garage.dock(shiny_red_bike)
       van.pick_up_from(garage)

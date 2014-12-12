@@ -2,6 +2,8 @@ module BikeContainer
 
 	DEFAULT_CAPACITY = 10
 
+	attr_writer :capacity
+
 	def bikes
 		@bikes ||= []
 	end
@@ -10,9 +12,9 @@ module BikeContainer
 		@capacity ||= DEFAULT_CAPACITY
 	end
 
-	def capacity=(value)
-		@capacity = value
-	end
+	# def capacity=(value)
+	# 	@capacity = value
+	# end
 
 	def bike_count
 		bikes.count
@@ -25,16 +27,16 @@ module BikeContainer
   end
 
   def release(bike)
-      raise "Sorry, no bikes are available - try again later." if available_bikes == 0
+    raise "Sorry, no bikes are available - try again later." if available_bikes == 0
   	bikes.delete(bike)
   end
 
   def release_available_bikes
-      available_bikes.each {|bike| release bike}
+    available_bikes.each { |bike| release bike }
   end
 
   def release_broken_bikes
-      broken_bikes.each {|bike| release bike}
+    broken_bikes.each { |bike| release bike }
   end
 
   def full?
@@ -42,15 +44,15 @@ module BikeContainer
   end
 
   def empty?
-      bike_count = 0
+    bike_count = 0
   end
 
   def available_bikes
-  	bikes.reject &:broken? #bikes.reject { |bike| bike.broken? }
+  	bikes.reject &:broken?
   end
 
   def broken_bikes
-      bikes.select &:broken? #bikes.select { |bike| bike.broken? }
+    bikes.select &:broken?
   end
 
 end
