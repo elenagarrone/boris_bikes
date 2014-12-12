@@ -3,8 +3,8 @@ require 'docking_station'
 describe DockingStation do
 
 	let(:station)    { DockingStation.new(:capacity => 123) }
-  let(:fixed_bike) {Bike.new}
-  let(:van)        {Van.new}
+  let(:fixed_bike) { Bike.new }
+  let(:van)        { Van.new }
 
   it "should allow setting default capacity on initialising" do
     expect(station.capacity).to eq(123)

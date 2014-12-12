@@ -4,9 +4,9 @@ require 'bike'
 
 describe Person do
 
-  let(:bike)    {Bike.new}
-  let(:person)  {Person.new}
-  let(:station) {DockingStation.new}
+  let(:bike)    { Bike.new }
+  let(:person)  { Person.new }
+  let(:station) { DockingStation.new }
 
   it "should be able to rent a bike" do
     station.dock(bike)
