@@ -2,7 +2,7 @@ require 'docking_station'
 
 describe DockingStation do
 
-	let(:station)    { DockingStation.new(:capacity => 123) }
+  let(:station)    { DockingStation.new(:capacity => 123) }
   let(:fixed_bike) { Bike.new }
   let(:van)        { Van.new }
 
