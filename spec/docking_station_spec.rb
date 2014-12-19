@@ -11,10 +11,10 @@ describe DockingStation do
   end
 
   it "should accept only fixed bikes from the van" do
-   van.dock(fixed_bike)
-   station.accept_bikes_from(van)
-   expect(station.bikes).to eq [fixed_bike]
-   expect(van.bikes).to eq []
+    van.dock(fixed_bike)
+    station.accept_bikes_from(van)
+    expect(station.bikes).to eq [fixed_bike]
+    expect(van.bikes).to eq []
   end
 
 end
