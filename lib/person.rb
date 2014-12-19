@@ -2,10 +2,10 @@ require_relative 'bike_container'
 
 class Person
 
-	include BikeContainer
+  include BikeContainer
 
-	def take(bike) 
-		bikes << bike
-	end
+  def take(bike) 
+    bikes << bike
+  end
 
 end
