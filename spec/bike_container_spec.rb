@@ -3,16 +3,16 @@ require 'bike_container'
 class ContainerHolder; include BikeContainer; end
 
 def fill_holder(holder)
-    holder.capacity.times { holder.dock (Bike.new) }
+  holder.capacity.times { holder.dock (Bike.new) }
 end
 
 describe BikeContainer do
 
-	let(:bike)   { Bike.new }
-	let(:holder) { ContainerHolder.new }
+  let(:bike)   { Bike.new }
+  let(:holder) { ContainerHolder.new }
 
   it "should accept a bike" do
-  	expect{ holder.dock(bike) }.to change{ holder.bike_count }.by 1
+    expect{ holder.dock(bike) }.to change{ holder.bike_count }.by 1
   end
 
   it "should release a bike" do
@@ -31,10 +31,10 @@ describe BikeContainer do
   end
 
   it "should provide the list of available bikes" do
-  	working_bike, broken_bike = Bike.new, Bike.broken
-  	holder.dock(working_bike)
-  	holder.dock(broken_bike)
-  	expect(holder.available_bikes).to eq([working_bike])
+    working_bike, broken_bike = Bike.new, Bike.broken
+    holder.dock(working_bike)
+    holder.dock(broken_bike)
+    expect(holder.available_bikes).to eq([working_bike])
   end
 
   it "should provide the list of broken bikes" do
