@@ -10,15 +10,15 @@ end
 
 describe Van do
 
-	let(:bike)           { Bike.new }
-	let(:van)            { Van.new }
+  let(:bike)           { Bike.new }
+  let(:van)            { Van.new }
   let(:station)        { DockingStation.new }
   let(:broken_bike)    { Bike.broken }
   let(:garage)         { Garage.new }
   let(:shiny_red_bike) { Bike.broken }
 
   it "should know when it's full" do
-   expect(van).not_to be_full
+    expect(van).not_to be_full
   end
 
   it "should not accept a bike if it's full" do
