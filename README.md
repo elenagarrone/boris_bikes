@@ -12,8 +12,8 @@ Technologies:
 - Test-driven development using RSpec
 - Git
 
-How to use
----------
+How to use:
+-----------
 
 Clone the directory:
 ```shell
@@ -28,8 +28,8 @@ Run irb and require the runner file:
 $ irb
 > require './lib/runner.rb'
 ```
-How to test it:
---------------
+How to test:
+------------
 From inside the directory run:
 ```shell
 $ rspec
